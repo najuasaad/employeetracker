@@ -27,33 +27,19 @@ CREATE TABLE employee (
     PRIMARY KEY (id)
 );
 
-SELECT name FROM department RIGHT JOIN role ON department.id = role.department_id;
-
-SELECT * FROM role RIGHT JOIN employee ON role.id = employee.role_id;
-
 INSERT INTO department (name)
 VALUES ("Accounting");
 INSERT INTO department (name)
 VALUES ("Sales");
-INSERT INTO department (name)
-VALUES ("HR");
-INSERT INTO department (name)
-VALUES ("Customer Service");
 
-INSERT INTO role (title, salary, department_id)
-VALUES ("Salesman", 50000, 2);
-INSERT INTO role (title, salary)
-VALUES ("Manager", 80000,);
-INSERT INTO role (title, salary, department_id)
-VALUES ("Customer Service Representative", 40000, 4);
 INSERT INTO role (title, salary, department_id)
 VALUES ("Accountant", 60000, 1);
+INSERT INTO role (title, salary, department_id)
+VALUES ("Salesman", 50000, 2);
 
-INSERT INTO employee (first_name, last_name, role_id,)
+INSERT INTO employee (first_name, last_name, role_id)
 VALUES ("Michael", "Scott", 2); 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("Stanley", "Hudson", 1, 1); 
+VALUES ("Stanley", "Hudson", 2, 1); 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("Kelly", "Kapoor", 3, 1);
-INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("Angela", "Martin", 4, 1)
+VALUES ("Angela", "Martin", 1, 1)

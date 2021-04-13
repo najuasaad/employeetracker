@@ -1,25 +1,18 @@
-const mysql = require('mysql')
-const myData = require('../root')
-
-const connection = mysql.createConnection(myData)
 
 class Department {
-    constuctor (name) {
-        this.name = name
+    constructor (connection) {
+        this.connection = connection;
     }   
-    addDBDepartment(){          //adds new table
-        const afterConnection = () =>{   
-            connection.query('INSERT INTO department VALUES (${data.newDepartment})', (err, res) => {
-                if (err) throw err;
-                connection.end()
+
+    addDBDepartment(deptname){          //adds new table
+        this.connection.query("INSERT INTO department SET ?", 
+        { name: deptname },
+        (err, res) => {
+            if (err){
+                console.log(err);
+                throw err;
             }
-            )
-            connection.end
-        }
-        
-        connection.connect((err) => {
-            if (err) throw err;
-            afterConnection()
+            return true;
         });
     }
 }
