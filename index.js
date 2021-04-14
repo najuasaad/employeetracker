@@ -350,9 +350,9 @@ const getUpdate = () => {
     let emp = response.upEmp
     let roleup = response.roleTitle
     let obj = roleSift.find(obj => obj.title === roleup)
-    let obj2 = employeeSift.find(obj => obj.first_name + " " + obj.last_name === emp)
-    let role_id = obj2.id
-    let emp_id = obj.id
+    let personObj = employeeSift.find(obj => obj.first_name + " " + obj.last_name === emp)
+    let role_id = obj.id
+    let emp_id = personObj.id
 
     commitUpdate(role_id, emp_id);
   })
